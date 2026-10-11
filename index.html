@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="sk" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>F1ND1 — Stretni jedného. Naozaj.</title>
+  <meta name="description" content="F1ND1 je zoznamka bez listovania. Jedno premyslené predstavenie denne, vysvetlenie prečo práve vy dvaja a Aurélia, ktorá vás dovedie až na rande." />
+  <meta name="theme-color" content="#06030C" />
+  <meta property="og:title" content="F1ND1 — Stretni jedného. Naozaj." />
+  <meta property="og:description" content="Žiadne listovanie. Jedno predstavenie denne a Aurélia, ktorá ťa dovedie až na rande." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="intro" aria-hidden="true"><span class="intro-mark">F1ND1</span></div>
+
+  <header class="nav" id="top">
+    <a class="wordmark" href="#top" aria-label="F1ND1">F1ND1</a>
+    <nav class="nav-links" aria-label="Menu">
+      <a href="#why" data-i18n="nav.why">Prečo F1ND1</a>
+      <a href="#how" data-i18n="nav.how">Ako to funguje</a>
+      <a href="#aurelia" data-i18n="nav.aurelia">Aurélia</a>
+      <a href="#live" data-i18n="nav.live">Live</a>
+      <a href="#safety" data-i18n="nav.safety">Bezpečnosť</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Jazyk / Language">
+        <button type="button" data-lang="sk" aria-pressed="true">SK</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-small magnetic" href="#prelaunch" data-i18n="nav.cta">Pre-launch</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow hero-in" data-i18n="hero.eyebrow">Zoznamka novej generácie</p>
+        <h1>
+          <span class="line"><span data-i18n="hero.l1">Stretni</span></span>
+          <span class="line"><span data-i18n="hero.l2">jedného.</span></span>
+          <span class="line"><span class="accent" data-i18n="hero.accent">Naozaj.</span></span>
+        </h1>
+        <p class="lead hero-in" data-i18n="hero.sub">Žiadne listovanie. Predstavím ti človeka, poviem prečo, dohodnem stretnutie a zostanem s tebou, kým sa nevrátiš domov.</p>
+        <div class="stores hero-in">
+          <a class="store soon magnetic" href="#download"><span class="store-icon apple" aria-hidden="true"></span><span><small data-i18n="store.soon">Už čoskoro</small>App Store</span></a>
+          <a class="store soon magnetic" href="#download"><span class="store-icon" aria-hidden="true">▶</span><span><small data-i18n="store.soon">Už čoskoro</small>Google Play</span></a>
+        </div>
+        <a class="btn hero-in magnetic hero-pl" href="#prelaunch" data-i18n="hero.pl">Prihlás sa do pre-launchu</a>
+        <a class="scroll-hint hero-in" href="#manifesto"><span class="mouse" aria-hidden="true"></span><span data-i18n="hero.scroll">Prečo práve F1ND1</span></a>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="radar"><span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="sweep"></span><i class="blip"></i><i class="blip"></i><i class="blip"></i></div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="ph-top"><span class="ph-wordmark">F1ND1</span><span class="ph-badge" data-i18n="mock.badge">Dnešná zhoda</span></div>
+            <div class="ph-card">
+              <div class="ph-photo"></div>
+              <p class="ph-tagline" data-i18n="mock.tagline">Najbližšie hodnotami</p>
+              <p class="ph-name">Nina, 31</p>
+              <p class="ph-city">Bratislava</p>
+              <div class="ph-tags"><span data-i18n="mock.tag1">Hory</span><span data-i18n="mock.tag2">Vážny vzťah</span></div>
+            </div>
+            <div class="ph-aurelia"><span class="orb"></span><p data-i18n="mock.why">Obaja chcete pokojné nedele v horách a vzťah, ktorý má smer.</p></div>
+            <div class="ph-actions"><span data-i18n="mock.pass">Nie teraz</span><span class="yes" data-i18n="mock.yes">Chcem spoznať</span></div>
+          </div>
+        </div>
+        <div class="chip c1" data-depth="1.6"><span class="pill mint" data-i18n="mock.dateLabel">Date mode</span><br /><span data-i18n="mock.dateStatus">Mama vie, kde a kedy</span></div>
+        <div class="chip c2" data-depth="2.2"><span class="pill gold" data-i18n="mock.memoryPrompt">Mám si to poznamenať?</span><br /><span data-i18n="mock.memoryFact">Zviera: border kólia Ben</span></div>
+        <div class="chip c3" data-depth="1.2"><span class="pill rose" data-i18n="mock.matchLabel">Je to zhoda</span><br /><span data-i18n="mock.matchText">Obaja ste povedali áno</span></div>
+      </div>
+    </section>
+
+    <!-- ── Marquee ───────────────────────────────────────────────────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span data-i18n="mq.1">Žiadne swipovanie</span><span data-i18n="mq.2">Jedno predstavenie denne</span><span data-i18n="mq.3">Vieš prečo</span><span data-i18n="mq.4">Rande dohodnuté</span><span data-i18n="mq.5">Date Mode</span><span data-i18n="mq.6">AI sprievodkyňa Aurélia</span>
+        <span data-i18n="mq.1">Žiadne swipovanie</span><span data-i18n="mq.2">Jedno predstavenie denne</span><span data-i18n="mq.3">Vieš prečo</span><span data-i18n="mq.4">Rande dohodnuté</span><span data-i18n="mq.5">Date Mode</span><span data-i18n="mq.6">AI sprievodkyňa Aurélia</span>
+      </div>
+    </div>
+
+    <!-- ── Manifesto ─────────────────────────────────────────────────────── -->
+    <section class="manifesto" id="manifesto">
+      <p class="words" data-i18n="manifesto">Nepotrebuješ prechádzať stovky ľudí. Potrebuješ jedného, ktorý ti naozaj sedí — a niekoho, kto ti povie prečo. To je F1ND1.</p>
+    </section>
+
+    <!-- ── Why ───────────────────────────────────────────────────────────── -->
+    <section class="section" id="why">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="why.eyebrow">Prečo práve F1ND1</p>
+        <h2 data-i18n-html="why.title">Bežné zoznamky ťa nechajú listovať. <span class="grad">My ťa privedieme k jednému.</span></h2>
+      </div>
+      <div class="grid3">
+        <article class="card tilt reveal"><span class="big-num">01</span><span class="icon i-violet">✕</span><h3 data-i18n="why.c1.t">Žiadne swipovanie</h3><p data-i18n="why.c1.d">Každý deň jedno premyslené predstavenie namiesto stoviek tvárí, ktoré zabudneš do minúty.</p></article>
+        <article class="card tilt reveal"><span class="big-num">02</span><span class="icon i-pink">?</span><h3 data-i18n="why.c2.t">Vieš, prečo práve tento človek</h3><p data-i18n="why.c2.d">Ku každému predstaveniu povieme, čo vás spája — hodnoty, tempo, plány do budúcna.</p></article>
+        <article class="card tilt reveal"><span class="big-num">03</span><span class="icon i-gold">★</span><h3 data-i18n="why.c3.t">Kvalita namiesto kvantity</h3><p data-i18n="why.c3.d">Členstvo drží v appke ľudí, ktorí to myslia vážne. Menej náhodných správ, viac skutočných stretnutí.</p></article>
+        <article class="card tilt reveal"><span class="big-num">04</span><span class="icon i-mint">♡</span><h3 data-i18n="why.c4.t">Odmietnutie nebolí</h3><p data-i18n="why.c4.d">Keď to nevyjde, nikto nevidí, kto koho odmietol. Uzatvárame dvojicu, nie človeka.</p></article>
+        <article class="card tilt reveal"><span class="big-num">05</span><span class="icon i-sky">➜</span><h3 data-i18n="why.c5.t">Od chatu až k rande</h3><p data-i18n="why.c5.d">Keď si sadnete, pomôžeme dohodnúť stretnutie. A Date Mode je s tebou aj počas neho.</p></article>
+        <article class="card tilt reveal"><span class="big-num">06</span><span class="icon i-rose">✓</span><h3 data-i18n="why.c6.t">Bezpečie v základe</h3><p data-i18n="why.c6.d">Nahlásiť, zablokovať a bezpečnostná kontrola chatu — pre každého, na každom pláne.</p></article>
+      </div>
+
+      <div class="compare reveal">
+        <div class="compare-row compare-head"><span></span><span data-i18n="cmp.them">Bežná zoznamka</span><span class="us">F1ND1</span></div>
+        <div class="compare-row"><span data-i18n="cmp.r1">Koho uvidíš</span><span data-i18n="cmp.r1a">Stovky profilov</span><span class="us" data-i18n="cmp.r1b">Jedno predstavenie denne</span></div>
+        <div class="compare-row"><span data-i18n="cmp.r2">Podľa čoho</span><span data-i18n="cmp.r2a">Podľa fotky</span><span class="us" data-i18n="cmp.r2b">Podľa hodnôt a toho, čo chceš</span></div>
+        <div class="compare-row"><span data-i18n="cmp.r3">Prvá správa</span><span data-i18n="cmp.r3a">Prázdne okno</span><span class="us" data-i18n="cmp.r3b">Aurélia poradí, ako začať</span></div>
+        <div class="compare-row"><span data-i18n="cmp.r4">Rande</span><span data-i18n="cmp.r4a">Všetko na tebe</span><span class="us" data-i18n="cmp.r4b">Pomôžeme ho dohodnúť, Date Mode stráži</span></div>
+        <div class="compare-row"><span data-i18n="cmp.r5">Keď to nevyjde</span><span data-i18n="cmp.r5a">Ghosting</span><span class="us" data-i18n="cmp.r5b">Láskavý koniec, bez trápnosti</span></div>
+      </div>
+    </section>
+
+    <!-- ── How (horizontal story) ────────────────────────────────────────── -->
+    <section class="story" id="how">
+      <div class="story-pin">
+        <div class="story-head">
+          <div>
+            <p class="eyebrow" data-i18n="how.eyebrow">Ako to funguje</p>
+            <h2 data-i18n="how.title">Od otázky k stretnutiu</h2>
+          </div>
+          <div class="story-progress" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="story-track">
+          <article class="step">
+            <span class="step-n">01</span>
+            <h3 data-i18n="how.s1.t">Povieš, čo hľadáš</h3>
+            <p data-i18n="how.s1.d">Na začiatok štrnásť krokov: koho hľadáš, čo chceš a čo nie. Zvyšok pridáš, kedy budeš chcieť.</p>
+            <div class="step-visual mini-q"><span class="on" data-i18n="how.s1.a">Vážny vzťah</span><span data-i18n="how.s1.b">Uvidíme</span><span class="on" data-i18n="how.s1.c">Nefajčím</span><span data-i18n="how.s1.d2">Deti raz áno</span><span class="on" data-i18n="how.s1.e">Hory</span></div>
+          </article>
+          <article class="step">
+            <span class="step-n">02</span>
+            <h3 data-i18n="how.s2.t">Aurélia ťa spozná</h3>
+            <p data-i18n="how.s2.d">Čím viac o sebe povieš, tým lepšie ťa pozná — a tým presnejšie vyberá.</p>
+            <div class="step-visual"><div class="meter"><span data-v="62%"></span></div><p class="meter-label" data-i18n="how.s2.meter">Aurélia ťa pozná na 62 %</p></div>
+          </article>
+          <article class="step">
+            <span class="step-n">03</span>
+            <h3 data-i18n="how.s3.t">Jedno predstavenie</h3>
+            <p data-i18n="how.s3.d">Dostaneš jedného človeka a vysvetlenie, prečo práve vy dvaja. Keď poviete áno obaja, otvorí sa chat.</p>
+            <div class="step-visual mini-match"><span class="av a1">T</span><span class="heart">♥</span><span class="av a3">N</span></div>
+          </article>
+          <article class="step">
+            <span class="step-n">04</span>
+            <h3 data-i18n="how.s4.t">Stretnutie</h3>
+            <p data-i18n="how.s4.d">Dohodnete si rande a Date Mode ide s tebou: niekto blízky vie, kde a kedy, a pomoc privoláš potichu.</p>
+            <div class="step-visual"><div class="mini-date"><span class="live-dot"></span><span data-i18n="how.s4.v">Date Mode zapnutý · Mama vie, kde a kedy</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Aurélia ───────────────────────────────────────────────────────── -->
+    <section class="section" id="aurelia">
+      <div class="aurelia-layer reveal">
+        <div class="aurelia-head">
+          <span class="orb big" aria-hidden="true"></span>
+          <div>
+            <p class="eyebrow gold" data-i18n="aur.eyebrow">AI, ktorá ti drží palce</p>
+            <h2 data-i18n="aur.title">Aurélia — tvoja sprievodkyňa</h2>
+          </div>
+        </div>
+        <p class="lead" data-i18n="aur.lead">F1ND1 je zoznamka postavená na umelej inteligencii. Aurélia nič nepošle za teba a nerozhoduje za teba — poradí, keď o to stojíš.</p>
+        <div class="grid4">
+          <div class="feat"><h4 data-i18n="aur.f1.t">Prvá veta</h4><p data-i18n="aur.f1.d">Nápad, ako začať rozhovor, ktorý nie je „ahoj, ako sa máš“.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f2.t">Poradiť v chate</h4><p data-i18n="aur.f2.d">Keď nevieš, čo odpísať, jemne navrhne ďalší krok.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f3.t">Prečo práve vy</h4><p data-i18n="aur.f3.d">Ľudskými slovami povie, čo vás dvoch spája.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f4.t">Nápady na rande</h4><p data-i18n="aur.f4.d">Miesta a plány, ktoré sedia vám obom.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f5.t">Bezpečnostná kontrola</h4><p data-i18n="aur.f5.d">Pozrie sa na chat, keď ti niečo nesedí — napríklad niekto pýta kód alebo peniaze.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f6.t">Tvoja karta</h4><p data-i18n="aur.f6.d">Pomôže napísať bio a poradí, ktoré fotky ťa vystihujú.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f7.t">Naša cesta</h4><p data-i18n="aur.f7.d">Váš príbeh od prvej správy po prvé rande.</p></div>
+          <div class="feat"><h4 data-i18n="aur.f8.t">Pomoc v appke</h4><p data-i18n="aur.f8.d">Na každej obrazovke vpravo dole, keď niečo nejde.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Live ──────────────────────────────────────────────────────────── -->
+    <section class="section" id="live">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="live.eyebrow">Live miestnosti</p>
+          <h2 data-i18n="live.title">Spoznaj ľudí aj podľa toho, čo máte radi</h2>
+          <p class="lead" data-i18n="live.lead">Miestnosti podľa mesta, jazyka a záujmov — beh po práci, koncerty, káva v nedeľu. Pokecáš, zasmeješ sa, a keď chceš niekoho spoznať bližšie, pošleš mu žiadosť o správu.</p>
+          <ul class="ticks">
+            <li data-i18n="live.t1">Krajina, mesto, jazyk, záujem — nájdeš svoju partiu</li>
+            <li data-i18n="live.t2">Klik na človeka ukáže jeho mini profil</li>
+            <li data-i18n="live.t3">Nadávky rieši komunita spolu s Auréliou</li>
+          </ul>
+        </div>
+        <div class="room reveal" aria-hidden="true">
+          <div class="room-head"><span class="live-dot"></span><b data-i18n="live.room">Bratislava večer</b><small data-i18n="live.online">12 online</small></div>
+          <div class="msg"><span class="av a1">L</span><p><b>Lucia</b><span data-i18n="live.m1">Kto ide dnes na koncert do Majesticu?</span></p></div>
+          <div class="msg"><span class="av a2">M</span><p><b>Marek</b><span data-i18n="live.m2">Ja! Stretneme sa pri vchode o siedmej?</span></p></div>
+          <div class="msg"><span class="av a3">E</span><p><b>Eva</b><span data-i18n="live.m3">Beriem aj kamarátku 🙂</span></p></div>
+          <div class="typing"><i></i><i></i><i></i></div>
+          <div class="room-chips"><span data-i18n="live.c1">Koncerty</span><span>Bratislava</span><span data-i18n="live.c2">slovenčina</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Safety ────────────────────────────────────────────────────────── -->
+    <section class="section" id="safety">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="safe.eyebrow">Bezpečnosť</p>
+        <h2 data-i18n-html="safe.title">Rande má byť zážitok, <span class="grad">nie riziko.</span></h2>
+      </div>
+      <div class="grid3">
+        <article class="card tilt reveal"><span class="icon i-mint">◎</span><h3 data-i18n="safe.c1.t">Date Mode</h3><p data-i18n="safe.c1.d">Počas rande vie niekto blízky, kde a kedy si. A keď treba, privoláš pomoc jedným potichým ťuknutím.</p></article>
+        <article class="card tilt reveal"><span class="icon i-rose">⚑</span><h3 data-i18n="safe.c2.t">Nahlásiš presne tú správu</h3><p data-i18n="safe.c2.d">Podržíš správu a nahlásiš ju. Rieši sa to, čo sa naozaj stalo.</p></article>
+        <article class="card tilt reveal"><span class="icon i-violet">✦</span><h3 data-i18n="safe.c3.t">Skutoční ľudia</h3><p data-i18n="safe.c3.d">Každý účet má overený e-mail a kto poruší pravidlá, nemá sa kam vrátiť.</p></article>
+      </div>
+    </section>
+
+    <!-- ── Plans ─────────────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="plans-box reveal">
+        <div>
+          <p class="eyebrow" data-i18n="plans.eyebrow">Členstvo</p>
+          <h2 data-i18n-html="plans.title"><span class="grad">3 dni</span> plného zážitku zadarmo</h2>
+          <p class="lead" data-i18n="plans.lead">Vyskúšaš si všetko, aj Auréliu. Potom si vyberieš F1ND1 alebo F1ND1 Pro so všetkými agentmi. Ceny zverejníme pri spustení.</p>
+        </div>
+        <div class="plan-cards">
+          <div class="plan"><b>F1ND1</b><span data-i18n="plans.std">Predstavenia, chat, Live a Date Mode</span></div>
+          <div class="plan pro"><b>F1ND1 Pro</b><span data-i18n="plans.pro">Všetko + Aurélia na každom kroku</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pre-launch campaign ──────────────────────────────────────────── -->
+    <section class="section prelaunch" id="prelaunch">
+      <div class="pl-box reveal">
+        <div class="pl-copy">
+          <p class="eyebrow"><span data-i18n="pl.eyebrow">Pre-launch kampaň</span><span class="pl-badge" data-i18n="pl.badge">v príprave</span></p>
+          <h2 data-i18n-html="pl.title">Buď pri tom <span class="grad">medzi prvými</span></h2>
+          <p class="lead" data-i18n="pl.lead">Nechaj nám e-mail a prihlás sa do pre-launchu F1ND1. Môžeš sa stať plateným testerom a patriť medzi zakladajúcich členov.</p>
+          <ul class="pl-perks">
+            <li><span class="icon i-violet">⚡</span><div><b data-i18n="pl.p1.t">Prednostný prístup</b><span data-i18n="pl.p1.d">F1ND1 si vyskúšaš medzi prvými.</span></div></li>
+            <li><span class="icon i-mint">€</span><div><b data-i18n="pl.p2.t">Šanca stať sa plateným testerom</b><span data-i18n="pl.p2.d">Testuj novinky skôr ako ostatní — a dostaň za to zaplatené.</span></div></li>
+            <li><span class="icon i-gold">★</span><div><b data-i18n="pl.p3.t">Prvých 100 v krajine má F1ND1 navždy zadarmo</b><span data-i18n="pl.p3.d">Ďalší zakladajúci členovia dostanú 3 mesiace F1ND1 Pro. Všetci majú odznak na profile.</span></div></li>
+          </ul>
+          <form class="pl-form" novalidate>
+            <label class="sr" for="pl-email" data-i18n="pl.emailLabel">E-mail</label>
+            <div class="pl-row">
+              <input id="pl-email" name="email" type="email" inputmode="email" autocomplete="email" required data-i18n-placeholder="pl.placeholder" placeholder="tvoj@email.sk" />
+              <button class="btn" type="submit" data-i18n="pl.submit">Prihlásiť sa</button>
+            </div>
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label class="pl-check"><input type="checkbox" name="tester" /><span data-i18n="pl.tester">Chcem sa uchádzať o miesto plateného testera</span></label>
+            <label class="pl-check"><input type="checkbox" name="consent" required /><span data-i18n="pl.consent">Súhlasím so zasielaním e-mailov o F1ND1 a pre-launchi.</span></label>
+            <p class="pl-msg" role="status" aria-live="polite"></p>
+            <p class="pl-note" data-i18n="pl.note">Kampaň je v príprave. O všetkom ťa budeme informovať e-mailom.</p>
+          </form>
+        </div>
+        <div class="pl-prize" aria-hidden="true">
+          <div class="prize-glow"></div>
+          <div class="prize-phone"><span class="prize-island"></span></div>
+          <div class="prize-amount"><small data-i18n="pl.upTo">prvých</small><b>100</b></div>
+          <div class="prize-tag" data-i18n="pl.prizeTag">★ navždy zadarmo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final ─────────────────────────────────────────────────────────── -->
+    <section class="final" id="download">
+      <p class="eyebrow reveal" data-i18n="final.eyebrow">Buď medzi prvými</p>
+      <h2 class="final-title reveal"><span data-i18n="final.l1">Prestaň listovať.</span> <span class="accent" data-i18n="final.l2">Začni stretávať.</span></h2>
+      <div class="stores center reveal">
+        <a class="store soon magnetic" href="#download"><span class="store-icon apple" aria-hidden="true"></span><span><small data-i18n="store.soon">Už čoskoro</small>App Store</span></a>
+        <a class="store soon magnetic" href="#download"><span class="store-icon" aria-hidden="true">▶</span><span><small data-i18n="store.soon">Už čoskoro</small>Google Play</span></a>
+      </div>
+      <div class="socials reveal">
+        <a class="soon" href="#download">Instagram</a>
+        <a class="soon" href="#download">TikTok</a>
+        <a class="soon" href="#download">Facebook</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="wordmark small">F1ND1</span>
+    <nav class="footer-links">
+      <a class="soon" href="#download" data-i18n="foot.privacy">Ochrana súkromia</a>
+      <a class="soon" href="#download" data-i18n="foot.terms">Podmienky</a>
+      <a class="soon" href="#download" data-i18n="foot.contact">Kontakt</a>
+      <a class="soon" href="#download" data-i18n="foot.press">Pre médiá</a>
+    </nav>
+    <small>© 2026 F1ND1</small>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
